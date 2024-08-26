@@ -11,25 +11,24 @@ const app=express();
 app.use(express.json());
 
 mongoose
-  // .connect("mongodb+srv://ahamid234567890:yPd9fu5suhw5eltA@mern-estate.d6dzov8.mongodb.net/mern-estate?retryWrites=true&w=majority&appName=mern-estate")
   .connect(process.env.MONGO)
-  .then(()=>{
+  .then(() => {
     console.log("connected to MongoDB!");
-  }).catch((err)=>{
+  }).catch((err) => {
     console.log(err);
   });
 
 
-app.listen(3000, ()=>{
-    console.log("server is running on the port 3000!!");
-     }
+app.listen(3000, () => {
+  console.log("server is running on the port 3000!!");
+}
 );
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 
-app.use((err,req,res,next)=>{
-  const statusCode =err.StatusCode ||'Internal Server Error';
+app.use((err, req, res, next) => {
+  const statusCode = err.StatusCode || 'Internal Server Error';
   return res.status(statusCode).json({
     success: false,
     statusCode,
