@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const listingSchema=new mongoose.Schema(
+const ListingSchema=new mongoose.Schema(
     {
         name:{
             type:String,
@@ -57,6 +57,6 @@ const listingSchema=new mongoose.Schema(
     },{timestamps:true}
 )
 
-const Listing =mongoose.model('Listing',listingSchema);
+const Listing =mongoose.model('Listing',ListingSchema);
 
 export default Listing;

@@ -23,5 +23,8 @@
     "react": "^18.3.1",
     "redux": "^5.0.1",
     "toolkit": "^1.5.4"
+  },
+  "devDependencies": {
+    "vite": "^5.4.4"
   }
 }

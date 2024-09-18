@@ -43,7 +43,7 @@ export const google=async(req,res,next)=>{
             res
              .cookie('access_token',token,{httpOnly:true})
              .status(200)
-             .json(rest);
+             .json(rest)
         }else{
             const generatedPassword=Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
             const hashedPassword =bcryptjs.hashSync(generatedPassword,10);
