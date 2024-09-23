@@ -10,9 +10,7 @@ dotenv.config();
 
 
 const _dirname=path.resolve(); 
-const app=express();
-app.use(express.json());
-app.use(cookieParser());
+
 
 mongoose
   .connect(process.env.MONGO)
@@ -22,6 +20,10 @@ mongoose
     console.log(err);
   });
 
+  const app=express();
+
+  app.use(express.json());
+  app.use(cookieParser());
 
 app.listen(3000, () => {
   console.log("server is running on the port 3000!!");
